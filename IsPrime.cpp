@@ -1,4 +1,4 @@
-
+//Returns if the number is Prime or non-Prime
 
 
 bool IsPrime( int number )
