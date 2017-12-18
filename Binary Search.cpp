@@ -2,7 +2,7 @@
 
 
 
-int BinarySearch(vector<int> &vect,int low,int high,int key)
+int BinarySearchRecursive(vector<int> &vect,int low,int high,int key)
 {
     if(high<low)
         return -1;
@@ -17,4 +17,23 @@ int BinarySearch(vector<int> &vect,int low,int high,int key)
     {
         BinarySearch(vect,mid+1,high,key);
     }
+}
+
+int BinarySearchIterative(vector<int> &vect,int low,int high,int key)
+{
+    while(low<=high)
+    {
+        int mid = floor(low + (double)(high-low)/2);
+        if(vect[mid]==key)
+            return mid;
+        else if(key<mid)
+        {
+            high = mid - 1;
+        }
+        else
+        {
+            low = mid + 1;
+        }
+    }
+    return -1;
 }
