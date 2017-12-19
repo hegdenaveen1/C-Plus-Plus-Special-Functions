@@ -1,4 +1,4 @@
-//Returns if the string is a Palindrome or not
+//Returns if the input is a Palindrome or not
 
 
 bool IsPalindrome(const string& str)
@@ -14,4 +14,20 @@ bool IsPalindrome(const string& str)
     }
    
     return true;
+}
+
+
+bool ispalin(int n)
+{
+    int a=n,rem,rev=0;
+    while(a)
+    {
+        rev=rev*10;
+        rev=rev+(a%10);
+        a=a/10;       
+    }
+    if(rev==n)
+        return true;
+    else
+        return false;      
 }
