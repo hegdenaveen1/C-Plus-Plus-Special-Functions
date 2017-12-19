@@ -1,8 +1,9 @@
-//Returns the index of key if found in already sorted vector, returns -1 if not found//
+//Returns the index of key if found in an already sorted vector, returns -1 if not found//
 
 
 
-int TernarySearchRecursive(vector<int> &vect,int low,int high,int key)
+//Recursive Version
+int TernarySearch(vector<int> &vect,int low,int high,int key)
 {
     if(high>=low)
     {
@@ -13,18 +14,18 @@ int TernarySearchRecursive(vector<int> &vect,int low,int high,int key)
         if(vect[mid2] == key)
             return mid2;
         if(x<vect[mid1])
-            return TernarySearchRecursive(vect,low,mid1-1,key);
+            return TernarySearch(vect,low,mid1-1,key);
         else if(x>vect[mid2])
-            return TernarySearchRecursive(vect,mid2+1,high,key);
+            return TernarySearch(vect,mid2+1,high,key);
         else
-            return TernarySearchRecursive(vect,mid1+1,mid2-1,key);
+            return TernarySearch(vect,mid1+1,mid2-1,key);
 
     }
     return -1;
 }
 
-
-int TernarySearchIterative(vector<int> &vect,int low,int high,int key)
+//Iterative Version
+int TernarySearch(vector<int> &vect,int low,int high,int key)
 {
     while(high>=low)
     {
