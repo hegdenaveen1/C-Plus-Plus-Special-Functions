@@ -1,6 +1,6 @@
 //Returns the boolean Primality Test of a given input
 //It is based on the fact that all prime numbers, except 2 & 3
-//are of the for 6*k+1 or + 6*k-1 where k is an integer.
+//are of the form 6*k+1 or + 6*k-1 where k is an integer.
 
 
 bool IsPrime( int number )
