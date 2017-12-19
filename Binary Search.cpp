@@ -1,8 +1,8 @@
-//Returns the index of key if found in already sorted vector, returns -1 if not found//
+//Returns the index of key if found in an already sorted vector, returns -1 if not found//
 
 
-
-int BinarySearchRecursive(vector<int> &vect,int low,int high,int key)
+//Recursive Version
+int BinarySearch(vector<int> &vect,int low,int high,int key)
 {
     if(high<low)
         return -1;
@@ -11,15 +11,17 @@ int BinarySearchRecursive(vector<int> &vect,int low,int high,int key)
         return mid;
     else if(key<vect[mid])
     {
-        BinarySearchRecursive(vect,low,mid-1,key);
+        BinarySearch(vect,low,mid-1,key);
     }
     else
     {
-        BinarySearchRecursive(vect,mid+1,high,key);
+        BinarySearch(vect,mid+1,high,key);
     }
 }
 
-int BinarySearchIterative(vector<int> &vect,int low,int high,int key)
+
+//Iterative Version
+int BinarySearch(vector<int> &vect,int low,int high,int key)
 {
     while(low<=high)
     {
