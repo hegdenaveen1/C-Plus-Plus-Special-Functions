@@ -7,7 +7,7 @@ string fill( char c, int n )
     return s;
 }
 
-//to convert to lowercase Roman Numeral
+//To convert to Lowercase Roman Numeral
 
 string toRoman( int n )
 {
@@ -27,7 +27,7 @@ string toRoman( int n )
 
 }
 
-//to convert to uppercase Roman Numeral
+//To convert to Uppercase Roman Numeral
 
 string toRoman( int n )
 {
