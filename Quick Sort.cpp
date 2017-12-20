@@ -29,8 +29,10 @@ for(int i=low+1;i<=high;i++)
   }
   if(vec[i]==pivot)
   {
+    j.left++;
     j.right++;
-    swap(vec[j.right],vec[i]);
+    swap(vec[j.left],vec[i]);
+
   }
 }
 swap(vec[j.left],vec[low]);
