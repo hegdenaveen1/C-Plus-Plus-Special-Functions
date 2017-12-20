@@ -5,7 +5,7 @@
 
 
 ****************************************************************
-////////////////Quicksort 3 Partition///////////////////////////
+///////Quicksort 3 Partition with median pivot//////////////////
 
 
 struct twopoint
@@ -14,28 +14,56 @@ struct twopoint
   int right;
 };
 
+int medianlocation(vector<int> &vec,int a,int b,int c)
+{
+  if(vec[a]<=vec[b])
+  {
+    if(vec[b]<=vec[c])
+      return b;
+    if(vec[a]<=vec[c])
+      return c;
+    return a;
+  }
+  if(vec[c]<=vec[b])
+    return b;
+  if(vec[a]<=vec[c])
+    return a;
+  return c;
+}
+
 twopoint Partition(vector<int> &vec,int low,int high)
 {
-int pivot=vec[low];
+int pivotlocation = medianlocation(vec,low,high,low+(high-low)/2);
+int pivot=vec[pivotlocation];
 twopoint j;
-j.left=low;
-j.right=low;
-for(int i=low+1;i<=high;i++)
-{
-  if(vec[i]<pivot)
-  {
-    j.left++;
-    swap(vec[j.left],vec[i]);
-  }
-  if(vec[i]==pivot)
-  {
-    j.left++;
-    j.right++;
-    swap(vec[j.left],vec[i]);
+j.left=pivotlocation;
+j.right=pivotlocation;
 
+for(int i=low;i<j.left;i++)
+{
+  if(vec[i]>=pivot)
+  {
+    swap(vec[i],vec[pivotlocation]);
+    j.left=i;
+    j.right=i;
+    pivotlocation=i;
   }
 }
-swap(vec[j.left],vec[low]);
+for(int i=j.right+1;i<=high;i++)
+{
+  if(vec[i]==pivot)
+  {
+    j.right++;
+    swap(vec[i],vec[j.right]);
+  }
+  if(vec[i]<pivot)
+  {
+    swap(vec[j.left],vec[i]);
+    j.left++;
+    i--;
+  }
+}
+
 return j;
 }
 
