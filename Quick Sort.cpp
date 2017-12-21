@@ -33,7 +33,7 @@ int medianlocation(vector<int> &vec,int a,int b,int c)
 
 twopoint Partition(vector<int> &vec,int low,int high)
 {
-int pivotlocation = medianlocation(vec,low,high,low+(high-low)/2);
+int pivotlocation = medianlocation(vec,low,high,(high+low)/2);
 int pivot=vec[pivotlocation];
 twopoint j;
 j.left=pivotlocation;
@@ -134,7 +134,7 @@ int medianlocation(vector<int> &vec,int a,int b,int c)
 
 int Partition(vector<int> &vec,int low,int high)
 {
-int pivotlocation = medianlocation(vec,low,high,low+(high-low)/2);
+int pivotlocation = medianlocation(vec,low,high,(high+low)/2);
 int pivot=vec[pivotlocation];
 int j=pivotlocation;
 for(int i=low;i<pivotlocation;i++)
