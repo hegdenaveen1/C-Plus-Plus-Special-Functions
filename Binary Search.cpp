@@ -6,7 +6,7 @@ int BinarySearch(vector<int> &vect,int low,int high,int key)
 {
     if(high<low)
         return -1;
-    int mid = (high+low)/2;
+    int mid = low + (high-low)/2; //avoids overflow
     if(vect[mid]==key)
         return mid;
     else if(key<vect[mid])
@@ -24,8 +24,8 @@ int BinarySearch(vector<int> &vect,int low,int high,int key)
 int BinarySearch(vector<int> &vect,int low,int high,int key)
 {
     while(low<=high)
-    {
-        int mid = (high+low)/2;
+    { 
+        int mid = low + (high-low)/2;
         if(vect[mid]==key)
             return mid;
         else if(key<mid)
