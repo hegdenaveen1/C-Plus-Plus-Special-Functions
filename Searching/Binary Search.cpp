@@ -28,7 +28,7 @@ int BinarySearch(vector<int> &vect,int low,int high,int key)
         int mid = low + (high-low)/2;
         if(vect[mid]==key)
             return mid;
-        else if(key<mid)
+        else if(key<vect[mid])
         {
             high = mid - 1;
         }
