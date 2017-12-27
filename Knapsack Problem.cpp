@@ -64,7 +64,7 @@ int DiscreteKnapsackWithoutRepetitions(const int W, const vector<int> &weight , 
 }
 
 *********************************************************************************************************************************************
-//Returns the answer of Fractional Knapsack Without Repetitions Problem
+//Returns the answer of Fractional Knapsack Problem
 
 
 struct knap
