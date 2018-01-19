@@ -17,3 +17,8 @@ void matrixmultiplication(int m,int p,int n)
             }
         }
 }
+
+int matrixdeterminent2x2()
+{
+	return (a[1][1]*a[0][0])-(a[0][1]*a[1][0]);
+}
