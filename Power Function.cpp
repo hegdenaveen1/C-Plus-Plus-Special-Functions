@@ -1,5 +1,18 @@
 //Power function
 
+int modpow(int a, int b, int mod) {
+    int ans = 1;
+    while (b) {
+        if (b & 1) {
+            ans *= a;
+            ans %= mod;
+        }
+        a *= a;
+        a %= mod;
+        b >>= 1;
+    }
+    return ans;
+}
 
 //Recursive Version
 double pow(double a, int n) 
