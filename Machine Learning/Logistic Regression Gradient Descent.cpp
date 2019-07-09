@@ -59,5 +59,14 @@ real LogisticRegressionGradientDescent(vector<point> vec,int xgiven)
 
     yneeded=1/(1+pow(2.703,-1*(m*xgiven+c)));
 
-    return yneeded;
+
+    //yneeded gives the probability
+    if(yneeded>=0.5)
+        {
+            return 1;
+        }
+    else
+        {
+            return 0; 
+        }
 }
